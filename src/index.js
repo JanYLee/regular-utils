@@ -1,17 +1,8 @@
-import './index.css';
-import './index.less';
 
-@log
-class A {
-  a = 1;
-}
+(function() {
+  console.log('%c regular expression test ', 'background: rgb(200, 200, 200); color: rgb(66, 66, 66); font-size:2em');
+})();
 
-function log(target) {
-  console.log(target);
-}
+import metaCharacter from './metaCharacter.js'; // 元字符测试
+metaCharacter();
 
-const a = new A();
-console.log(a.a);
-
-// es7 check
-console.log('es7 check:', 'aaa'.includes('a'));
