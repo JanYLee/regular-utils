@@ -13,9 +13,12 @@
 
 ---
 ### 运行
-`npm run dev`
+`npm run test`
+
+或者运行单个测试用例
+
+`npx jest ./test/xxxx.test.js`
 
 ---
-### 查看
-在浏览器3000端口查看控制台数据结果, 对src下的index.js文件进行选择注释, 查看不同数据结果
-`http://localhost: 3000`
+### 测试框架
+使用 [jest](https://jestjs.io/en/) 测试, [断言文档](https://jestjs.io/docs/en/expect.html)
