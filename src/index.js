@@ -4,5 +4,5 @@
 })();
 
 import metaCharacter from './metaCharacter.js'; // 元字符测试
-metaCharacter();
+metaCharacter.numberTest();
 
