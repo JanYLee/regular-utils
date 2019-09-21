@@ -7,10 +7,22 @@ export default class metaCharacter {
    *
    * @static
    * @param {*} str
-   * @returns boolean
+   * @returns Boolean
    * @memberof metaCharacter
    */
   static isValidNumber (str) {
     return /^[+-]?(\d|([1-9]\d+))(\.\d+)?$/.test(str);
+  }
+
+  /**
+   * 检测是否在18到55范围内
+   *
+   * @static
+   * @param {*} str
+   * @returns Boolean
+   * @memberof metaCharacter
+   */
+  static number18to55 (str) {
+    return /^(1[8-9]|[2-4]\d|5[0-5])$/.test(str);
   }
 }
