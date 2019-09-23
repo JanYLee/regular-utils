@@ -42,4 +42,30 @@ export default class Uitls {
     })
     return obj;
   }
+
+  /**
+   * 中文格式化时间 "2019-01-02 12:59:59" -> "2019年01月02日 12时59分59秒"
+   *
+   * @static
+   * @param {*} str
+   * @returns String
+   * @memberof Uitls
+   */
+  static formatCBDate (str) {
+    let reg = /^(\d{4})[-/](\d{1,2})[-/](\d{1,2}) +(\d{1,2}):(\d{1,2}):(\d{1,2})$/g;
+    let arr = [];
+    // 把"2019-01-02 12:59:59" 转为 [2019, 01, 02, 12, 59, 59]
+    str.replace(reg, function () {
+      arr = [].slice.call(arguments).slice(1, 7);
+    });
+
+    // 把[2019, 01, 02, 12, 59, 59] 替换进写好的模版中
+    const resStr = '{0}年{1}月{2}日 {3}时{4}分{5}秒';
+    reg = /{(\d+)}/g;
+    return resStr.replace(reg, function () {
+      let num = arr[arguments[1]];
+      num = num < 10 ? '0' + num : num;
+      return num;
+    })
+  }
 }
