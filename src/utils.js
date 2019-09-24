@@ -68,4 +68,21 @@ export default class Uitls {
       return num;
     })
   }
+
+  /**
+   * 将数字字符串格式化为含有千分位的字符串
+   * '123456789' -> '123,456,789'
+   *
+   * @static
+   * @param {*} str
+   * @returns String
+   * @memberof Uitls
+   */
+  static formatNumberThousand (str) {
+    const reg = /\d(?=(\d{3})+$)/g;
+    str = str.replace(reg, function () {
+      return arguments[0] + ',';
+    });
+    return str.replace(reg, '$1,');
+  }
 }
